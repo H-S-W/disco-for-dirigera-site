@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Disco for Dirigera – gratis partyljus för IKEA DIRIGERA- och TRÅDFRI-lampor</title>
+<meta name="description" content="Förvandla färglamporna på din IKEA DIRIGERA-hubb till ett synkat disco. Gratis Android-app, inget moln, inget konto. Pro låser upp alla lampor för 39 kr en gång.">
+<link rel="canonical" href="https://h-s-w.github.io/disco-for-dirigera-site/sv/">
+<link rel="alternate" hreflang="en" href="https://h-s-w.github.io/disco-for-dirigera-site/">
+<link rel="alternate" hreflang="sv" href="https://h-s-w.github.io/disco-for-dirigera-site/sv/">
+<link rel="alternate" hreflang="x-default" href="https://h-s-w.github.io/disco-for-dirigera-site/">
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/icon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Disco for Dirigera">
+<meta property="og:title" content="Disco for Dirigera – partyljus för IKEA DIRIGERA">
+<meta property="og:description" content="Gratis Android-app som gör dina IKEA-färglampor till en synkad ljusshow. Lokalt, privat, ingen prenumeration.">
+<meta property="og:url" content="https://h-s-w.github.io/disco-for-dirigera-site/sv/">
+<meta property="og:image" content="https://h-s-w.github.io/disco-for-dirigera-site/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="sv_SE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14141A">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Disco for Dirigera",
+  "operatingSystem": "Android",
+  "applicationCategory": "UtilitiesApplication",
+  "inLanguage": "sv",
+  "description": "Gör färglamporna på en IKEA DIRIGERA-hubb till en synkroniserad partyljusshow. Gratis nedladdning; Pro låser upp alla lampor med ett engångsköp.",
+  "url": "https://h-s-w.github.io/disco-for-dirigera-site/sv/",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.dirigeraparty&hl=sv",
+  "image": "https://h-s-w.github.io/disco-for-dirigera-site/assets/og-image.png",
+  "screenshot": "https://h-s-w.github.io/disco-for-dirigera-site/assets/screen-party.jpg",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SEK"},
+  "author": {"@type": "Person", "name": "Hampus Wikner"}
+}
+</script>
+<style>
+  :root {
+    --bg: #14141A; --surface: #1E2026; --surface2: #292B31; --line: rgba(255,255,255,.08);
+    --fg: #F4F4F6; --muted: #B3B3B8; --dim: #85858C; --accent: #E0B55E; --ok: #6FCF97;
+    --radius: 20px; --max: 1080px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  header.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; color: var(--fg); text-decoration: none; font-weight: 600; }
+  .brand img { width: 36px; height: 36px; border-radius: 10px; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: 14px; }
+  nav a:hover { color: var(--fg); }
+  .lang { border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; }
+
+  .hero { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding: 48px 0 72px; overflow: hidden; }
+  .glow { position: absolute; inset: auto -10% -40% auto; width: 60vw; max-width: 700px; aspect-ratio: 1; border-radius: 50%; filter: blur(80px); opacity: .35; pointer-events: none;
+    background: conic-gradient(from 90deg, #ff3b6b, #ff9f1a, #ffe71a, #3dff7a, #1ad9ff, #5b5bff, #c13bff, #ff3b6b); }
+  .eyebrow { font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+  h1 { font-size: clamp(34px, 5.2vw, 58px); line-height: 1.05; letter-spacing: -.02em; margin: 0 0 18px; font-weight: 700; }
+  .lead { font-size: 18px; color: var(--muted); max-width: 520px; margin: 0 0 28px; }
+  .cta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .cta img { height: 60px; width: auto; }
+  .cta small { color: var(--dim); font-size: 13px; line-height: 1.4; }
+  .phone { justify-self: center; width: min(300px, 70vw); border-radius: 38px; border: 10px solid #2A2C33; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06); overflow: hidden; position: relative; z-index: 1; }
+  .phone img { width: 100%; }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: clamp(26px, 3.4vw, 36px); letter-spacing: -.02em; margin: 0 0 10px; }
+  .sub { color: var(--muted); margin: 0 0 32px; max-width: 640px; }
+  .grid { display: grid; gap: 16px; }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .card h3 { margin: 0 0 6px; font-size: 17px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .num { flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--surface2); display: grid; place-items: center; font-weight: 700; color: var(--accent); }
+  .swatch { height: 6px; border-radius: 3px; margin-bottom: 16px; background: linear-gradient(90deg, #ff3b6b, #ff9f1a, #ffe71a, #3dff7a, #1ad9ff, #5b5bff, #c13bff); }
+
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .shots figure { margin: 0; }
+  .shots img { border-radius: 22px; border: 1px solid var(--line); }
+  .shots figcaption { color: var(--dim); font-size: 13px; margin-top: 10px; text-align: center; }
+
+  table.plans { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  table.plans th, table.plans td { padding: 14px 18px; text-align: left; border-top: 1px solid var(--line); font-size: 15px; }
+  table.plans thead th { border-top: 0; background: var(--surface2); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  table.plans td:not(:first-child), table.plans th:not(:first-child) { text-align: center; width: 22%; }
+  .ok { color: var(--ok); font-weight: 600; }
+  .price { font-size: 22px; font-weight: 700; }
+  .note { color: var(--dim); font-size: 14px; margin-top: 14px; }
+
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 0 20px; margin-bottom: 10px; }
+  summary { cursor: pointer; padding: 16px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--dim); font-size: 20px; }
+  details[open] summary::after { content: "–"; }
+  details p { margin: 0 0 16px; color: var(--muted); }
+
+  .callout { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; background: linear-gradient(135deg, #1E2026, #23252C); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+  .btn { display: inline-block; background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 600; padding: 12px 20px; border-radius: 12px; }
+  footer { padding: 40px 0 60px; color: var(--dim); font-size: 14px; border-top: 1px solid var(--line); }
+  footer a { color: var(--muted); }
+  footer p { margin: 6px 0; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding-top: 24px; }
+    .phone { order: -1; width: min(240px, 60vw); }
+    .cols-3 { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+    .callout { grid-template-columns: 1fr; }
+    nav a:not(.lang) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><img src="../assets/icon-192.png" alt="" width="36" height="36">Disco for Dirigera</a>
+    <nav>
+      <a href="#how">Så funkar det</a>
+      <a href="#features">Funktioner</a>
+      <a href="#pro">Gratis &amp; Pro</a>
+      <a href="#faq">Frågor</a>
+      <a class="lang" href="../" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="border-top:0">
+    <div class="glow" aria-hidden="true"></div>
+    <div>
+      <p class="eyebrow">Gratis Android-app · IKEA DIRIGERA</p>
+      <h1>Dina IKEA-lampor, i takt med festen.</h1>
+      <p class="lead">Disco for Dirigera gör färglamporna på din DIRIGERA-hubb till en ljusshow. Välj palett, tryck på play, lås telefonen. Lamporna fortsätter.</p>
+      <div class="cta">
+        <a href="https://play.google.com/store/apps/details?id=com.dirigeraparty&amp;hl=sv" rel="noopener">
+          <img alt="Ladda ned på Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/sv_badge_web_generic.png">
+        </a>
+        <small>Gratis nedladdning · 2 lampor åt gången<br>Pro låser upp alla lampor · 39 kr, en gång</small>
+      </div>
+    </div>
+    <div class="phone"><img src="../assets/screen-party.jpg" alt="Partyskärmen i Disco for Dirigera med 24 lampor som cyklar genom regnbågstemat" width="720" height="1560" fetchpriority="high"></div>
+  </section>
+
+  <section id="how">
+    <h2>Två minuter från installation till disco</h2>
+    <p class="sub">Inget konto, inget moln, ingen extra hårdvara. Appen pratar direkt med hubben över ditt wifi.</p>
+    <div class="grid cols-3">
+      <div class="card step"><div class="num">1</div><div><h3>Koppla hubben</h3><p>Appen hittar din DIRIGERA i nätverket. Tryck en gång på knappen på hubbens undersida för att godkänna.</p></div></div>
+      <div class="card step"><div class="num">2</div><div><h3>Välj en palett</h3><p>Rainbow, Sunset, Ocean, Halloween, Christmas med flera, eller bygg en egen på färghjulet.</p></div></div>
+      <div class="card step"><div class="num">3</div><div><h3>Tryck på play</h3><p>Alla valda lampor börjar växla färg i takt. Välj Våg, Synk, Slump eller Strobe och ställ in tempot.</p></div></div>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>Byggd för en sak: festen</h2>
+    <p class="sub">Gränssnittet är mörkt och lugnt så att all färg hamnar i rummet.</p>
+    <div class="grid cols-3">
+      <div class="card"><div class="swatch"></div><h3>Teman och egna paletter</h3><p>Tio inbyggda teman plus en editor: dra i ringen, lägg till upp till 12 färger, spara med namn.</p></div>
+      <div class="card"><div class="swatch"></div><h3>Fyra synklägen</h3><p>Våg rullar genom rummet, Synk byter alla lampor samtidigt, Slump överraskar, Strobe tar droppen.</p></div>
+      <div class="card"><div class="swatch"></div><h3>Hastighet, ljusstyrka, intensitet</h3><p>Från ett långsamt skimmer på en halv minut till byten var halvsekund. Dra ner mättnaden för mjukare toner.</p></div>
+      <div class="card"><div class="swatch"></div><h3>Fortsätter med låst telefon</h3><p>Loopen kör i en Android-förgrundstjänst med stoppknapp i notispanelen.</p></div>
+      <div class="card"><div class="swatch"></div><h3>Ställer tillbaka rummet</h3><p>När festen är slut går varje lampa tillbaka till färgen och ljusstyrkan den hade innan.</p></div>
+      <div class="card"><div class="swatch"></div><h3>Lokalt och privat</h3><p>Inget lämnar ditt wifi. Ingen analys, ingen spårning, inget konto. <a href="../privacy.html">Läs integritetspolicyn</a>.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>I appen</h2>
+    <div class="shots">
+      <figure><img loading="lazy" src="../assets/screen-party.jpg" alt="Partyskärm: rummet live, synklägen och reglage" width="720" height="1560"><figcaption>Rummet live, synklägen, reglage</figcaption></figure>
+      <figure><img loading="lazy" src="../assets/screen-presets.jpg" alt="Temaeditor med färghjul och en sekvens på fyra färger" width="720" height="1560"><figcaption>Bygg din egen palett</figcaption></figure>
+      <figure><img loading="lazy" src="../assets/screen-notification.jpg" alt="Androids notispanel med notisen Party mode active och en stoppknapp" width="720" height="1560"><figcaption>Kör med släckt skärm</figcaption></figure>
+      <figure><img loading="lazy" src="../assets/screen-setup.jpg" alt="Inställningsskärm som hittar DIRIGERA-hubben i det lokala nätverket" width="720" height="1560"><figcaption>Hittar hubben åt dig</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="pro">
+    <h2>Gratis att använda. Pro för hela rummet.</h2>
+    <p class="sub">Alla funktioner ingår gratis med två lampor åt gången. Pro tar bort gränsen med ett enda köp, ingen prenumeration.</p>
+    <table class="plans">
+      <thead><tr><th></th><th>Gratis</th><th>Pro</th></tr></thead>
+      <tbody>
+        <tr><td>Lampor i ett party</td><td>2 åt gången</td><td class="ok">Alla</td></tr>
+        <tr><td>Teman och egna paletter</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+        <tr><td>Våg, Synk, Slump, Strobe</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+        <tr><td>Kör i bakgrunden, återställer lamporna</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+        <tr><td>Demoläge utan hubb</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+        <tr><td>Pris</td><td class="price">0 kr</td><td class="price">39 kr <span style="font-size:13px;font-weight:400;color:var(--dim)">en gång</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note">Köpte du Disco for Dirigera när den var en betalapp? Då är Pro redan ditt, inget att göra.</p>
+  </section>
+
+  <section>
+    <div class="callout">
+      <div>
+        <h2 style="font-size:24px">Ingen hubb än? Prova demoläget.</h2>
+        <p class="sub" style="margin:0">Sju simulerade lampor i tre rum låter dig testa alla teman och synklägen innan du köper en DIRIGERA.</p>
+      </div>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.dirigeraparty&amp;hl=sv" rel="noopener">Installera gratis</a>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Frågor</h2>
+    <details><summary>Funkar den med gamla TRÅDFRI-gatewayen?</summary><p>Nej. Appen använder det lokala API:et i IKEA DIRIGERA-hubben. Den fyrkantiga TRÅDFRI-gatewayen stöds inte.</p></details>
+    <details><summary>Vilka lampor kan den styra?</summary><p>Alla lampor med färg som är parade med din DIRIGERA: IKEA TRÅDFRI färglampor, ORMANÄS-ljusslingor och andra färglampor som syns i IKEA Home smart. Lampor med bara vitt ljus kan inte byta färg och lämnas ifred.</p></details>
+    <details><summary>Behöver den internet?</summary><p>Nej. Telefonen och hubben behöver bara vara i samma wifi. Det finns inget molnkonto och ingen server emellan.</p></details>
+    <details><summary>Fortsätter den när jag låser telefonen?</summary><p>Ja. Färgloopen kör i en nativ Android-förgrundstjänst, så den överlever låst skärm och appbyten. En notis visar en stoppknapp.</p></details>
+    <details><summary>Varför är två lampor gratis?</summary><p>Två lampor räcker för att uppleva allt, inklusive Våg och Synk. Pro är en engångskostnad på 39 kr som finansierar utvecklingen. Ingen prenumeration, inga annonser.</p></details>
+    <details><summary>Finns den till iPhone?</summary><p>Inte än. Disco for Dirigera finns bara till Android idag.</p></details>
+    <details><summary>Är det här en IKEA-app?</summary><p>Nej. Det är ett fristående projekt av en svensk utvecklare. "DIRIGERA", "TRÅDFRI" och "IKEA" är varumärken som tillhör Inter IKEA Systems B.V. Appen är inte godkänd av eller kopplad till IKEA.</p></details>
+    <details><summary>Något funkar inte. Vem pratar jag med?</summary><p>Mejla <a href="mailto:hampus.wikner@gmail.com">hampus.wikner@gmail.com</a>. Buggar och idéer är välkomna.</p></details>
+  </section>
+
+  <footer>
+    <p><strong style="color:var(--fg)">Disco for Dirigera</strong> · Android-app för IKEA DIRIGERA-färglampor</p>
+    <p><a href="../privacy.html">Integritetspolicy</a> · <a href="mailto:hampus.wikner@gmail.com">Kontakt</a> · <a href="../" hreflang="en" lang="en">English</a></p>
+    <p>Ingen koppling till IKEA. Google Play och Google Play-logotypen är varumärken som tillhör Google LLC.</p>
+  </footer>
+</div>
+</body>
+</html>

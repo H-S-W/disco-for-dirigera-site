@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Disco for Dirigera — Privacy Policy</title>
+<meta name="description" content="Privacy policy for the Disco for Dirigera Android app. The app collects no personal data and only talks to your IKEA DIRIGERA hub on your local network.">
+<link rel="canonical" href="https://h-s-w.github.io/disco-for-dirigera-site/privacy.html">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<style>
+  :root { color-scheme: dark light; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, system-ui, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1f;
+    background: #fafafa;
+    padding: 40px 20px;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 2rem; margin-bottom: 0.25em; }
+  h2 { font-size: 1.25rem; margin-top: 2em; border-bottom: 1px solid #e5e5e8; padding-bottom: 0.3em; }
+  p, li { font-size: 1rem; }
+  code { background: #efefef; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; }
+  em { color: #666; font-style: normal; display: block; margin-bottom: 1.5em; }
+  a { color: #c79a3c; }
+  .back { font-size: .9rem; margin-bottom: 1.5em; display: inline-block; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #14141a; color: #e6e6e8; }
+    h2 { border-bottom-color: #2a2a30; }
+    code { background: #24242a; }
+    em { color: #999; }
+  }
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="./">← Disco for Dirigera</a>
+<h1>Privacy Policy for Disco for Dirigera</h1>
+
+<em>Last updated: 2026-11-19</em>
+
+<p>This privacy policy describes how the "Disco for Dirigera" Android application ("the App", "we") handles information. The App is developed and maintained by Hampus Wikner as an individual developer.</p>
+
+<h2>Short version</h2>
+<ul>
+  <li>The App does not collect, transmit, or share any personal data.</li>
+  <li>The App does not use analytics, crash reporting, advertising, or tracking of any kind.</li>
+  <li>The App communicates <strong>only</strong> with an IKEA DIRIGERA smart home hub on your local Wi-Fi network, and with Google Play on your device for the optional Pro purchase.</li>
+  <li>No data leaves your home network to us.</li>
+</ul>
+
+<h2>What information the App handles</h2>
+<p>The App stores the following on your device only:</p>
+<ul>
+  <li>The local IP address of your DIRIGERA hub (entered by you or discovered on your local network).</li>
+  <li>The access token issued by your DIRIGERA hub, used to authenticate requests to the hub.</li>
+  <li>Your saved color presets, speed, brightness, and other preferences.</li>
+  <li>Whether the Pro unlock is active on this device.</li>
+</ul>
+<p>This information is stored locally on your device using Android's standard app storage (AsyncStorage). It is never transmitted to the developer or to any third party.</p>
+
+<h2>Network access</h2>
+<p>The App requests the <code>INTERNET</code> permission solely to communicate with your DIRIGERA hub over your local Wi-Fi network (typically at an address such as <code>https://192.168.x.x:8443</code>). The App does not contact any server operated by the developer and does not contact any third-party service, with the single exception of Google Play Billing described below.</p>
+<p>Because the DIRIGERA hub presents a self-signed TLS certificate, the App is configured to trust that certificate on your local network only. This relaxed certificate validation applies exclusively to requests addressed to the hub's local IP; it does not expose you to risk on the public internet because no public-internet requests are made by the App itself.</p>
+
+<h2>In-app purchase (Pro)</h2>
+<p>The App is free to download. The optional "Pro" unlock is a one-time in-app purchase processed entirely by Google Play Billing, a component of the Google Play services on your device. We never see or store your payment details. Google processes the transaction under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. The App only asks Google Play whether the purchase exists on your Google account, so that Pro can be restored after a reinstall, and keeps the answer on your device.</p>
+
+<h2>Foreground service and notifications</h2>
+<p>The App runs a foreground service while "party mode" is active. This is required by Android so that the color-cycling loop continues to drive your lights while the phone's screen is off or the App is in the background. The service shows a persistent notification titled "Party mode active". Stopping party mode in the App stops the service and dismisses the notification.</p>
+
+<h2>Permissions</h2>
+<ul>
+  <li><code>INTERNET</code> — to talk to your DIRIGERA hub on your local network.</li>
+  <li><code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_SPECIAL_USE</code> — to keep the color-cycling loop running while the phone is locked.</li>
+  <li><code>WAKE_LOCK</code> — to prevent the CPU from sleeping during party mode so lights keep cycling reliably.</li>
+  <li><code>VIBRATE</code> — haptic feedback on button presses.</li>
+  <li><code>com.android.vending.BILLING</code> — to offer the Pro in-app purchase through Google Play.</li>
+</ul>
+<p>The App does not request access to your location, contacts, photos, camera, microphone, or any other personal data source.</p>
+
+<h2>Children's privacy</h2>
+<p>The App is not directed at children under 13 and does not knowingly collect information from anyone.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, an updated version will be published at the URL where you found this document. The "Last updated" date above will reflect the change.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy can be sent to: <strong>hampus.wikner@gmail.com</strong></p>
+
+</main>
+</body>
+</html>

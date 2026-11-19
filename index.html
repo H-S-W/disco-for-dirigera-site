@@ -3,82 +3,226 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Disco for Dirigera — Privacy Policy</title>
+<title>Disco for Dirigera – free party lights for IKEA DIRIGERA & TRÅDFRI bulbs</title>
+<meta name="description" content="Turn the color bulbs on your IKEA DIRIGERA hub into a synced disco. Free Android app, no cloud, no account. Pro unlocks every light for a one-time 39 kr.">
+<link rel="canonical" href="https://h-s-w.github.io/disco-for-dirigera-site/">
+<link rel="alternate" hreflang="en" href="https://h-s-w.github.io/disco-for-dirigera-site/">
+<link rel="alternate" hreflang="sv" href="https://h-s-w.github.io/disco-for-dirigera-site/sv/">
+<link rel="alternate" hreflang="x-default" href="https://h-s-w.github.io/disco-for-dirigera-site/">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Disco for Dirigera">
+<meta property="og:title" content="Disco for Dirigera – party lights for IKEA DIRIGERA">
+<meta property="og:description" content="Free Android app that turns your IKEA color bulbs into a synced light show. Local, private, no subscription.">
+<meta property="og:url" content="https://h-s-w.github.io/disco-for-dirigera-site/">
+<meta property="og:image" content="https://h-s-w.github.io/disco-for-dirigera-site/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14141A">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Disco for Dirigera",
+  "operatingSystem": "Android",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Turns the color bulbs on an IKEA DIRIGERA hub into a synchronized party light show. Free download; Pro unlocks all lights with a one-time purchase.",
+  "url": "https://h-s-w.github.io/disco-for-dirigera-site/",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.dirigeraparty",
+  "image": "https://h-s-w.github.io/disco-for-dirigera-site/assets/og-image.png",
+  "screenshot": "https://h-s-w.github.io/disco-for-dirigera-site/assets/screen-party.jpg",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SEK"},
+  "author": {"@type": "Person", "name": "Hampus Wikner"}
+}
+</script>
 <style>
-  :root { color-scheme: dark light; }
-  html, body { margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, system-ui, sans-serif;
-    line-height: 1.6;
-    color: #1a1a1f;
-    background: #fafafa;
-    padding: 40px 20px;
+  :root {
+    --bg: #14141A; --surface: #1E2026; --surface2: #292B31; --line: rgba(255,255,255,.08);
+    --fg: #F4F4F6; --muted: #B3B3B8; --dim: #85858C; --accent: #E0B55E; --ok: #6FCF97;
+    --radius: 20px; --max: 1080px;
   }
-  main { max-width: 720px; margin: 0 auto; }
-  h1 { font-size: 2rem; margin-bottom: 0.25em; }
-  h2 { font-size: 1.25rem; margin-top: 2em; border-bottom: 1px solid #e5e5e8; padding-bottom: 0.3em; }
-  p, li { font-size: 1rem; }
-  code { background: #efefef; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; }
-  em { color: #666; font-style: normal; display: block; margin-bottom: 1.5em; }
-  a { color: #c79a3c; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #14141a; color: #e6e6e8; }
-    h2 { border-bottom-color: #2a2a30; }
-    code { background: #24242a; }
-    em { color: #999; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  header.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; color: var(--fg); text-decoration: none; font-weight: 600; }
+  .brand img { width: 36px; height: 36px; border-radius: 10px; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: 14px; }
+  nav a:hover { color: var(--fg); }
+  .lang { border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; }
+
+  .hero { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding: 48px 0 72px; overflow: hidden; }
+  .glow { position: absolute; inset: auto -10% -40% auto; width: 60vw; max-width: 700px; aspect-ratio: 1; border-radius: 50%; filter: blur(80px); opacity: .35; pointer-events: none;
+    background: conic-gradient(from 90deg, #ff3b6b, #ff9f1a, #ffe71a, #3dff7a, #1ad9ff, #5b5bff, #c13bff, #ff3b6b); }
+  .eyebrow { font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+  h1 { font-size: clamp(34px, 5.2vw, 58px); line-height: 1.05; letter-spacing: -.02em; margin: 0 0 18px; font-weight: 700; }
+  .lead { font-size: 18px; color: var(--muted); max-width: 520px; margin: 0 0 28px; }
+  .cta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .cta img { height: 60px; width: auto; }
+  .cta small { color: var(--dim); font-size: 13px; line-height: 1.4; }
+  .phone { justify-self: center; width: min(300px, 70vw); border-radius: 38px; border: 10px solid #2A2C33; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06); overflow: hidden; position: relative; z-index: 1; }
+  .phone img { width: 100%; }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: clamp(26px, 3.4vw, 36px); letter-spacing: -.02em; margin: 0 0 10px; }
+  .sub { color: var(--muted); margin: 0 0 32px; max-width: 640px; }
+  .grid { display: grid; gap: 16px; }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .card h3 { margin: 0 0 6px; font-size: 17px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .num { flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--surface2); display: grid; place-items: center; font-weight: 700; color: var(--accent); }
+  .swatch { height: 6px; border-radius: 3px; margin-bottom: 16px; background: linear-gradient(90deg, #ff3b6b, #ff9f1a, #ffe71a, #3dff7a, #1ad9ff, #5b5bff, #c13bff); }
+
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .shots figure { margin: 0; }
+  .shots img { border-radius: 22px; border: 1px solid var(--line); }
+  .shots figcaption { color: var(--dim); font-size: 13px; margin-top: 10px; text-align: center; }
+
+  table.plans { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  table.plans th, table.plans td { padding: 14px 18px; text-align: left; border-top: 1px solid var(--line); font-size: 15px; }
+  table.plans thead th { border-top: 0; background: var(--surface2); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  table.plans td:not(:first-child), table.plans th:not(:first-child) { text-align: center; width: 22%; }
+  .ok { color: var(--ok); font-weight: 600; }
+  .price { font-size: 22px; font-weight: 700; }
+  .note { color: var(--dim); font-size: 14px; margin-top: 14px; }
+
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 0 20px; margin-bottom: 10px; }
+  summary { cursor: pointer; padding: 16px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--dim); font-size: 20px; }
+  details[open] summary::after { content: "–"; }
+  details p { margin: 0 0 16px; color: var(--muted); }
+
+  .callout { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; background: linear-gradient(135deg, #1E2026, #23252C); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+  .btn { display: inline-block; background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 600; padding: 12px 20px; border-radius: 12px; }
+  footer { padding: 40px 0 60px; color: var(--dim); font-size: 14px; border-top: 1px solid var(--line); }
+  footer a { color: var(--muted); }
+  footer p { margin: 6px 0; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding-top: 24px; }
+    .phone { order: -1; width: min(240px, 60vw); }
+    .cols-3, .cols-2 { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+    .callout { grid-template-columns: 1fr; }
+    nav a:not(.lang) { display: none; }
   }
 </style>
 </head>
 <body>
-<main>
-<h1>Privacy Policy for Disco for Dirigera</h1>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><img src="assets/icon-192.png" alt="" width="36" height="36">Disco for Dirigera</a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#pro">Free &amp; Pro</a>
+      <a href="#faq">FAQ</a>
+      <a class="lang" href="sv/" hreflang="sv" lang="sv">Svenska</a>
+    </nav>
+  </header>
 
-<em>Last updated: 2026-04-22</em>
+  <section class="hero" style="border-top:0">
+    <div class="glow" aria-hidden="true"></div>
+    <div>
+      <p class="eyebrow">Free Android app · IKEA DIRIGERA</p>
+      <h1>Your IKEA lights, synced to the party.</h1>
+      <p class="lead">Disco for Dirigera turns the color bulbs on your DIRIGERA hub into a light show. Pick a palette, press play, lock your phone. The lights keep going.</p>
+      <div class="cta">
+        <a href="https://play.google.com/store/apps/details?id=com.dirigeraparty" rel="noopener">
+          <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+        </a>
+        <small>Free download · 2 lights at a time<br>Pro unlocks every light · 39 kr, once</small>
+      </div>
+    </div>
+    <div class="phone"><img src="assets/screen-party.jpg" alt="Disco for Dirigera party screen with 24 lights cycling through a rainbow preset" width="720" height="1560" fetchpriority="high"></div>
+  </section>
 
-<p>This privacy policy describes how the "Disco for Dirigera" Android application ("the App", "we") handles information. The App is developed and maintained by Hampus Wikner as an individual developer.</p>
+  <section id="how">
+    <h2>Two minutes from install to disco</h2>
+    <p class="sub">No account, no cloud, no extra hardware. The app talks straight to the hub over your Wi-Fi.</p>
+    <div class="grid cols-3">
+      <div class="card step"><div class="num">1</div><div><h3>Connect the hub</h3><p>The app finds your DIRIGERA on the network. Press the button on the bottom of the hub once to authorize it.</p></div></div>
+      <div class="card step"><div class="num">2</div><div><h3>Pick a palette</h3><p>Rainbow, Sunset, Ocean, Halloween, Christmas and more, or build your own on the color wheel.</p></div></div>
+      <div class="card step"><div class="num">3</div><div><h3>Press play</h3><p>Every selected bulb starts cycling in time. Choose Wave, Sync, Random or Strobe and set the tempo.</p></div></div>
+    </div>
+  </section>
 
-<h2>Short version</h2>
-<ul>
-  <li>The App does not collect, transmit, or share any personal data.</li>
-  <li>The App does not use analytics, crash reporting, advertising, or tracking of any kind.</li>
-  <li>The App communicates <strong>only</strong> with an IKEA DIRIGERA smart home hub on your local Wi-Fi network.</li>
-  <li>No data leaves your home network.</li>
-</ul>
+  <section id="features">
+    <h2>Built for one thing: the party</h2>
+    <p class="sub">The UI stays dark and quiet so all the color lives in the room.</p>
+    <div class="grid cols-3">
+      <div class="card"><div class="swatch"></div><h3>Presets and your own palettes</h3><p>Ten built-in themes plus an editor: drag the ring, add up to 12 colors, save it with a name.</p></div>
+      <div class="card"><div class="swatch"></div><h3>Four sync modes</h3><p>Wave ripples through the room, Sync changes every bulb at once, Random surprises, Strobe hits the drop.</p></div>
+      <div class="card"><div class="swatch"></div><h3>Speed, brightness, intensity</h3><p>From a slow half-minute glow to half-second changes. Dial the saturation back for softer tones.</p></div>
+      <div class="card"><div class="swatch"></div><h3>Keeps going with the phone locked</h3><p>The loop runs in an Android foreground service with a stop button in the notification shade.</p></div>
+      <div class="card"><div class="swatch"></div><h3>Puts the room back</h3><p>When the party ends, every bulb returns to the color and brightness it had before.</p></div>
+      <div class="card"><div class="swatch"></div><h3>Local and private</h3><p>Nothing leaves your Wi-Fi. No analytics, no tracking, no account. <a href="privacy.html">Read the privacy policy</a>.</p></div>
+    </div>
+  </section>
 
-<h2>What information the App handles</h2>
-<p>The App stores the following on your device only:</p>
-<ul>
-  <li>The local IP address of your DIRIGERA hub (entered by you or discovered on your local network).</li>
-  <li>The access token issued by your DIRIGERA hub, used to authenticate requests to the hub.</li>
-  <li>Your saved color presets, speed, brightness, and other preferences.</li>
-</ul>
-<p>This information is stored locally on your device using Android's standard app storage (AsyncStorage). It is never transmitted to the developer or to any third party.</p>
+  <section>
+    <h2>In the app</h2>
+    <div class="shots">
+      <figure><img loading="lazy" src="assets/screen-party.jpg" alt="Party screen: live room canvas, sync modes and sliders" width="720" height="1560"><figcaption>Live room, sync modes, sliders</figcaption></figure>
+      <figure><img loading="lazy" src="assets/screen-presets.jpg" alt="Preset editor with a color wheel and a four-color sequence" width="720" height="1560"><figcaption>Build your own palette</figcaption></figure>
+      <figure><img loading="lazy" src="assets/screen-notification.jpg" alt="Android notification shade with the Party mode active notification and a stop button" width="720" height="1560"><figcaption>Runs with the screen off</figcaption></figure>
+      <figure><img loading="lazy" src="assets/screen-setup.jpg" alt="Setup screen discovering the DIRIGERA hub on the local network" width="720" height="1560"><figcaption>Finds the hub for you</figcaption></figure>
+    </div>
+  </section>
 
-<h2>Network access</h2>
-<p>The App requests the <code>INTERNET</code> permission solely to communicate with your DIRIGERA hub over your local Wi-Fi network (typically at an address such as <code>https://192.168.x.x:8443</code>). The App does not contact any server operated by the developer and does not contact any third-party service.</p>
-<p>Because the DIRIGERA hub presents a self-signed TLS certificate, the App is configured to trust that certificate on your local network only. This relaxed certificate validation applies exclusively to requests addressed to the hub's local IP; it does not expose you to risk on the public internet because no public-internet requests are made.</p>
+  <section id="pro">
+    <h2>Free to use. Pro for the whole room.</h2>
+    <p class="sub">Every feature is included for free with two lights at a time. Pro lifts the limit with a single purchase, no subscription.</p>
+    <table class="plans">
+      <thead><tr><th></th><th>Free</th><th>Pro</th></tr></thead>
+      <tbody>
+        <tr><td>Lights in a party</td><td>2 at a time</td><td class="ok">All of them</td></tr>
+        <tr><td>Presets and custom palettes</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+        <tr><td>Wave, Sync, Random, Strobe</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+        <tr><td>Runs in the background, restores lights</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+        <tr><td>Demo Mode without a hub</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+        <tr><td>Price</td><td class="price">0 kr</td><td class="price">39 kr <span style="font-size:13px;font-weight:400;color:var(--dim)">once</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note">Bought Disco for Dirigera back when it was a paid app? Pro is already yours, nothing to do. Prices are shown in your local currency on Google Play.</p>
+  </section>
 
-<h2>Foreground service and notifications</h2>
-<p>The App runs a foreground service while "party mode" is active. This is required by Android so that the color-cycling loop continues to drive your lights while the phone's screen is off or the App is in the background. The service shows a persistent notification titled "Party mode active". Stopping party mode in the App stops the service and dismisses the notification.</p>
+  <section>
+    <div class="callout">
+      <div>
+        <h2 style="font-size:24px">No hub yet? Try Demo Mode.</h2>
+        <p class="sub" style="margin:0">Seven simulated bulbs in three rooms let you try every preset and sync mode before you buy a DIRIGERA.</p>
+      </div>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.dirigeraparty" rel="noopener">Install free</a>
+    </div>
+  </section>
 
-<h2>Permissions</h2>
-<ul>
-  <li><code>INTERNET</code> — to talk to your DIRIGERA hub on your local network.</li>
-  <li><code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_SPECIAL_USE</code> — to keep the color-cycling loop running while the phone is locked.</li>
-  <li><code>WAKE_LOCK</code> — to prevent the CPU from sleeping during party mode so lights keep cycling reliably.</li>
-  <li><code>VIBRATE</code> — haptic feedback on button presses.</li>
-</ul>
-<p>The App does not request access to your location, contacts, photos, camera, microphone, or any other personal data source.</p>
+  <section id="faq">
+    <h2>Questions</h2>
+    <details><summary>Does it work with the old TRÅDFRI gateway?</summary><p>No. The app uses the local API of the IKEA DIRIGERA hub. The square TRÅDFRI gateway is not supported.</p></details>
+    <details><summary>Which bulbs can it control?</summary><p>Any color-capable bulb paired with your DIRIGERA: IKEA TRÅDFRI color bulbs, ORMANÄS LED strips and other color lights that show up in IKEA Home smart. White-spectrum-only bulbs cannot change color, so they are left alone.</p></details>
+    <details><summary>Does it need the internet?</summary><p>No. Your phone and the hub only need to be on the same Wi-Fi. There is no cloud account and no server of ours in between.</p></details>
+    <details><summary>Does it keep running when I lock the phone?</summary><p>Yes. The color loop runs in a native Android foreground service, so it survives a locked screen and app switching. A notification shows a stop button.</p></details>
+    <details><summary>Why are two lights free?</summary><p>Two lights are enough to experience everything, including the Wave and Sync modes. Pro is a one-time 39 kr that funds development. There is no subscription and no ads.</p></details>
+    <details><summary>Is there an iPhone version?</summary><p>Not yet. Disco for Dirigera is Android-only today.</p></details>
+    <details><summary>Is this an IKEA app?</summary><p>No. It is an independent project by a Swedish developer. "DIRIGERA", "TRÅDFRI" and "IKEA" are trademarks of Inter IKEA Systems B.V. The app is not endorsed by or affiliated with IKEA.</p></details>
+    <details><summary>Something is not working. Who do I talk to?</summary><p>Email <a href="mailto:hampus.wikner@gmail.com">hampus.wikner@gmail.com</a>. Bugs and feature ideas are welcome.</p></details>
+  </section>
 
-<h2>Children's privacy</h2>
-<p>The App is not directed at children under 13 and does not knowingly collect information from anyone.</p>
-
-<h2>Changes to this policy</h2>
-<p>If this policy changes, an updated version will be published at the URL where you found this document. The "Last updated" date above will reflect the change.</p>
-
-<h2>Contact</h2>
-<p>Questions about this policy can be sent to: <strong>hampus.wikner@gmail.com</strong></p>
-
-</main>
+  <footer>
+    <p><strong style="color:var(--fg)">Disco for Dirigera</strong> · Android app for IKEA DIRIGERA color bulbs</p>
+    <p><a href="privacy.html">Privacy policy</a> · <a href="mailto:hampus.wikner@gmail.com">Contact</a> · <a href="sv/" hreflang="sv" lang="sv">Svenska</a></p>
+    <p>Not affiliated with IKEA. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+  </footer>
+</div>
 </body>
 </html>

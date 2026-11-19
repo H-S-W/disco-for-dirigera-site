@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://h-s-w.github.io/disco-for-dirigera-site/sitemap.xml

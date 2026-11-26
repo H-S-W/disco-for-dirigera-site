@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Disco for Dirigera – free party lights for IKEA DIRIGERA & TRÅDFRI bulbs</title>
-<meta name="description" content="Turn the color bulbs on your IKEA DIRIGERA hub into a synced disco. Free Android app, no cloud, no account. Pro unlocks every light for a one-time 39 kr.">
+<title>Disco for Dirigera – free disco mode for IKEA DIRIGERA lights</title>
+<meta name="description" content="Disco for Dirigera adds a disco mode to IKEA DIRIGERA: your TRÅDFRI color bulbs cycle in sync. Free Android app, no cloud, no account. Pro unlocks every light for a one-time 39 kr.">
+<meta name="application-name" content="Disco for Dirigera">
 <link rel="canonical" href="https://h-s-w.github.io/disco-for-dirigera-site/">
 <link rel="alternate" hreflang="en" href="https://h-s-w.github.io/disco-for-dirigera-site/">
 <link rel="alternate" hreflang="sv" href="https://h-s-w.github.io/disco-for-dirigera-site/sv/">
@@ -26,9 +27,11 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Disco for Dirigera",
+  "alternateName": ["Disco for DIRIGERA", "DIRIGERA disco mode"],
   "operatingSystem": "Android",
   "applicationCategory": "UtilitiesApplication",
-  "description": "Turns the color bulbs on an IKEA DIRIGERA hub into a synchronized party light show. Free download; Pro unlocks all lights with a one-time purchase.",
+  "description": "Disco mode for IKEA DIRIGERA: turns the color bulbs on the hub into a synchronized party light show. Free download; Pro unlocks all lights with a one-time purchase.",
+  "sameAs": ["https://play.google.com/store/apps/details?id=com.dirigeraparty"],
   "url": "https://h-s-w.github.io/disco-for-dirigera-site/",
   "installUrl": "https://play.google.com/store/apps/details?id=com.dirigeraparty",
   "image": "https://h-s-w.github.io/disco-for-dirigera-site/assets/og-image.png",
@@ -59,7 +62,7 @@
   .hero { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding: 48px 0 72px; overflow: hidden; }
   .glow { position: absolute; inset: auto -10% -40% auto; width: 60vw; max-width: 700px; aspect-ratio: 1; border-radius: 50%; filter: blur(80px); opacity: .35; pointer-events: none;
     background: conic-gradient(from 90deg, #ff3b6b, #ff9f1a, #ffe71a, #3dff7a, #1ad9ff, #5b5bff, #c13bff, #ff3b6b); }
-  .eyebrow { font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+  .eyebrow { display: block; font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
   h1 { font-size: clamp(34px, 5.2vw, 58px); line-height: 1.05; letter-spacing: -.02em; margin: 0 0 18px; font-weight: 700; }
   .lead { font-size: 18px; color: var(--muted); max-width: 520px; margin: 0 0 28px; }
   .cta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
@@ -133,8 +136,7 @@
   <section class="hero" style="border-top:0">
     <div class="glow" aria-hidden="true"></div>
     <div>
-      <p class="eyebrow">Free Android app · IKEA DIRIGERA</p>
-      <h1>Your IKEA lights, synced to the party.</h1>
+      <h1><span class="eyebrow">Disco for Dirigera · free disco mode for IKEA DIRIGERA</span>Your IKEA lights, synced to the party.</h1>
       <p class="lead">Disco for Dirigera turns the color bulbs on your DIRIGERA hub into a light show. Pick a palette, press play, lock your phone. The lights keep going.</p>
       <div class="cta">
         <a href="https://play.google.com/store/apps/details?id=com.dirigeraparty" rel="noopener">
@@ -208,6 +210,7 @@
 
   <section id="faq">
     <h2>Questions</h2>
+    <details open><summary>Does IKEA DIRIGERA have a disco mode?</summary><p>Not in IKEA's own Home smart app. Disco for Dirigera adds one: it cycles your color bulbs through a palette in sync, in a wave, at random or as a strobe, straight from your phone over the hub's local connection.</p></details>
     <details><summary>Does it work with the old TRÅDFRI gateway?</summary><p>No. The app uses the local API of the IKEA DIRIGERA hub. The square TRÅDFRI gateway is not supported.</p></details>
     <details><summary>Which bulbs can it control?</summary><p>Any color-capable bulb paired with your DIRIGERA: IKEA TRÅDFRI color bulbs, ORMANÄS LED strips and other color lights that show up in IKEA Home smart. White-spectrum-only bulbs cannot change color, so they are left alone.</p></details>
     <details><summary>Does it need the internet?</summary><p>No. Your phone and the hub only need to be on the same Wi-Fi. There is no cloud account and no server of ours in between.</p></details>

@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Disco for Dirigera – gratis partyljus för IKEA DIRIGERA- och TRÅDFRI-lampor</title>
-<meta name="description" content="Förvandla färglamporna på din IKEA DIRIGERA-hubb till ett synkat disco. Gratis Android-app, inget moln, inget konto. Pro låser upp alla lampor för 39 kr en gång.">
+<title>Disco for Dirigera – gratis discoläge för IKEA DIRIGERA-lampor</title>
+<meta name="description" content="Disco for Dirigera ger IKEA DIRIGERA ett discoläge: dina TRÅDFRI-färglampor växlar färg i takt. Gratis Android-app, inget moln, inget konto. Pro låser upp alla lampor för 39 kr en gång.">
+<meta name="application-name" content="Disco for Dirigera">
 <link rel="canonical" href="https://h-s-w.github.io/disco-for-dirigera-site/sv/">
 <link rel="alternate" hreflang="en" href="https://h-s-w.github.io/disco-for-dirigera-site/">
 <link rel="alternate" hreflang="sv" href="https://h-s-w.github.io/disco-for-dirigera-site/sv/">
@@ -27,10 +28,12 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Disco for Dirigera",
+  "alternateName": ["Disco for DIRIGERA", "DIRIGERA discoläge"],
   "operatingSystem": "Android",
   "applicationCategory": "UtilitiesApplication",
   "inLanguage": "sv",
-  "description": "Gör färglamporna på en IKEA DIRIGERA-hubb till en synkroniserad partyljusshow. Gratis nedladdning; Pro låser upp alla lampor med ett engångsköp.",
+  "description": "Discoläge för IKEA DIRIGERA: gör färglamporna på hubben till en synkroniserad partyljusshow. Gratis nedladdning; Pro låser upp alla lampor med ett engångsköp.",
+  "sameAs": ["https://play.google.com/store/apps/details?id=com.dirigeraparty"],
   "url": "https://h-s-w.github.io/disco-for-dirigera-site/sv/",
   "installUrl": "https://play.google.com/store/apps/details?id=com.dirigeraparty&hl=sv",
   "image": "https://h-s-w.github.io/disco-for-dirigera-site/assets/og-image.png",
@@ -61,7 +64,7 @@
   .hero { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding: 48px 0 72px; overflow: hidden; }
   .glow { position: absolute; inset: auto -10% -40% auto; width: 60vw; max-width: 700px; aspect-ratio: 1; border-radius: 50%; filter: blur(80px); opacity: .35; pointer-events: none;
     background: conic-gradient(from 90deg, #ff3b6b, #ff9f1a, #ffe71a, #3dff7a, #1ad9ff, #5b5bff, #c13bff, #ff3b6b); }
-  .eyebrow { font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+  .eyebrow { display: block; font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
   h1 { font-size: clamp(34px, 5.2vw, 58px); line-height: 1.05; letter-spacing: -.02em; margin: 0 0 18px; font-weight: 700; }
   .lead { font-size: 18px; color: var(--muted); max-width: 520px; margin: 0 0 28px; }
   .cta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
@@ -134,8 +137,7 @@
   <section class="hero" style="border-top:0">
     <div class="glow" aria-hidden="true"></div>
     <div>
-      <p class="eyebrow">Gratis Android-app · IKEA DIRIGERA</p>
-      <h1>Dina IKEA-lampor, i takt med festen.</h1>
+      <h1><span class="eyebrow">Disco for Dirigera · gratis discoläge för IKEA DIRIGERA</span>Dina IKEA-lampor, i takt med festen.</h1>
       <p class="lead">Disco for Dirigera gör färglamporna på din DIRIGERA-hubb till en ljusshow. Välj palett, tryck på play, lås telefonen. Lamporna fortsätter.</p>
       <div class="cta">
         <a href="https://play.google.com/store/apps/details?id=com.dirigeraparty&amp;hl=sv" rel="noopener">
@@ -209,6 +211,7 @@
 
   <section id="faq">
     <h2>Frågor</h2>
+    <details open><summary>Har IKEA DIRIGERA ett discoläge?</summary><p>Inte i IKEA:s egen app Home smart. Disco for Dirigera lägger till ett: färglamporna växlar genom en palett i takt, i en våg, slumpvis eller som strobe, direkt från mobilen via hubbens lokala anslutning.</p></details>
     <details><summary>Funkar den med gamla TRÅDFRI-gatewayen?</summary><p>Nej. Appen använder det lokala API:et i IKEA DIRIGERA-hubben. Den fyrkantiga TRÅDFRI-gatewayen stöds inte.</p></details>
     <details><summary>Vilka lampor kan den styra?</summary><p>Alla lampor med färg som är parade med din DIRIGERA: IKEA TRÅDFRI färglampor, ORMANÄS-ljusslingor och andra färglampor som syns i IKEA Home smart. Lampor med bara vitt ljus kan inte byta färg och lämnas ifred.</p></details>
     <details><summary>Behöver den internet?</summary><p>Nej. Telefonen och hubben behöver bara vara i samma wifi. Det finns inget molnkonto och ingen server emellan.</p></details>
